@@ -4,31 +4,26 @@ const { resolve } = require('path')
 
 const program = require('commander')
 const pino = require('pino')
-
+const { publish, setupContext } = require('../index.bin')
 
 program
-  .description('command description')
-  // .option(
-  //   '-f, --filePath [filePath]',
-  //   'The relative file path to the rule file (defaults to ./firestore.rules)',
-  //   resolve('./firestore.rules')
-  // )
-  // .option(
-  //   '-o, --outputFilePath [outputFilePath]',
-  //   'the relative file path to output the new minimized file (defaults to ./firestore.min.rules)',
-  //   resolve('./firestore.min.rules')
-  // )
+  .description('publish code examples from the current project')
   .parse(process.argv)
 
 const exec = async (options) => {
   const startTime = Date.now()
   const context = setupContext()
   const { logger } = context
-  logger.info('running...')
+  logger.info('publishing examples...')
 
   const finalLogger = pino.final(logger)
   try {
-    // execute code
+    await publish(context, options)
+    const duration = ((Date.now() - startTime) / 1000).toFixed(2)
+    logger.info()
+    logger.info(
+      `Published examples in ${duration}s`
+    )
     logger.info(
       `command complete`
     )

@@ -6,7 +6,7 @@ const pack = require('../package.json')
 
 program
   .version(pack.version)
-  // .command('command', 'command description')
+  .command('publish', 'publish code examples from the current project')
   .parse(process.argv)
 
 if (!program.args.length) {

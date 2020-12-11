@@ -1,29 +1,23 @@
 language: node_js
 sudo: false
-
 node_js:
 - 14
 - 12
 - 10
-
 os:
 - linux
 - osx
 - windows
-
 install:
 - npm run setup
-
 script:
 - npm run test:ci
-
 stages:
 - audit
 - lint
 - test
 - name: deploy
-  if: tag=~^v AND repo=brianneisler/[project-name]
-
+  if: tag=~^v AND repo=brianneisler/xampl
 jobs:
   include:
   - stage: audit
@@ -45,7 +39,6 @@ jobs:
       api_key: "$NPM_TOKEN"
       on:
         tags: true
-
 env:
   global:
-    secure: Xo7UinKqo0N68mQwo7mKceh0b51HBLMgSneG4avWuTrOPoo6MUQJE2VWaBF3eE3O74mPR1Fj/slpyPkiHwPDMU1AA+bqHUN0kTrsAikhEzqSYW8PWMwkBGtEYuxmUpY2Y/3aFnZ4IFMNeqYhkBq7n/66sWoIO7ue52mW1XjwIx+UEAGQEj62GKpZ4Y4LhmyMqTaZoxUPNhjXx0wshOO5lwxqFy/hUoOS+Taxt/aKk+jfSyzLcUedP73mY+gFh/0m0GBQBNCprwY6lt0gsy2K8hazcesitCBifCfz7BVK27j1pci3XUp83mvCXAHG0eC/F1mQzCVlsCyV0ighUhNvMjBsUsM5EpvKOVzQiGfjyVBX8gveWnBlXl7/m0AMjDNJ8dmQLu3sIlpRv4pi9toqXV8NVMDQgRANpa3k1XvvXbvQtXCWUIlJ/DMptl04KlFOJSDswYCenqZ58M9+aqdzDz+RBP22/onatkF0TcZ28Dtix7bhOX08VLQ2HPXgZ0Wq/EyvJhM2GdLSzNTOX6vPmugBhdruuzLmwJENHjs7WdK4bUhjfTJZTnDi7XE2Du2ctlTvlEcsUtU1+qQGIRUZhXgQ8GsE56tpYcOld8wbxaTELDm/OPuBC6MP192RRmw3WwW8vJiOTjYs3kCO1hcfQ3VqU0TDlOUJFet3HBjYz5o=
+    secure: p+EFHEZdyP3brcBxd6g/uAC277oZNlNm9d92yxOaW8akIJrJSblxNHAj93ikJ44zbjY9Q4xsGU8lIZwIzY8+ONYS+GDzmbp96PVtQkCypMuktClTmik7ZfWuPDmv+AKzpWX0VMdET7XIExf+vv8P4EG6dNm1nvk6rwCRoYY4ChpGCn+chU+/oC01vF5vgTUV4LYibN4qLCXnrQwoj5th+zOYnoNPdgc8wkdPTB/tyl4+IviswESrc2IrXj1hsMX518lj/iMBKjb75JXWwngFuj79hHNCKHRUC79L59lZ4I2oD/6eNGZLI8GJY+fBwZTi58NpKR294Wuef8GUqtvvCqZrZDN6cTPNtenI8VG+sV77sJEcfHiRYUH0kMwCdTOyDtAr5PWPB8hYcJ8z0arzR4W6cd1BWyyM2na2QJ/yNyPB6K2cLf4EihDa89XkwTRkUVT52B+hSsXzptYGDYZ5Dfgrdp41USWULbZlYAbTHSykUztUbqSYjIePV1cED7zWljiuWxBhWXM1xtZVAKnqh7CZDxFN05jd6Va8e00QKYWh0TrewANepHSMTh5JCWXw/NFGez9dF7odZ9s+36/AvxKEwQWLtNvJvqhRexY3qYcoj/ttRfuoTiMxycNNLaqr8eECcFakXc7fxmtmYgYCGS5kVKCL3Y36Rxfi0/Y8cFE=

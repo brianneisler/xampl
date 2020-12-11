@@ -1,32 +1,27 @@
 {
-  "name": "[project-name]",
+  "name": "xampl",
   "version": "0.0.1",
-  "description": "[project-description]",
+  "description": "CLI tools and SDK for xampl",
   "author": "Brian Neisler <hello@brianneisler.com>",
   "license": "Apache-2.0",
-  "homepage": "[project-homepage]",
+  "homepage": "https://xampl.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brianneisler/[project-name].git"
+    "url": "https://github.com/brianneisler/xampl.git"
   },
   "bugs": {
-    "url": "https://github.com/brianneisler/[project-name]/issues"
+    "url": "https://github.com/brianneisler/xampl/issues"
   },
   "bin": {
-    "[project-name]": "./bin/[project-name]"
+    "xampl": "./bin/xampl"
   },
   "main": "./index.js",
   "module": "./index.module.js",
   "exports": {
     ".": "./index.module.js",
-    "./ast": "./src/ast/index.js",
     "./constants": "./src/constants/index.js",
     "./context": "./src/context/index.js",
-    "./generator": "./src/generator/index.js",
-    "./minimizer": "./src/minimizer/index.js",
-    "./parser": "./src/parser/index.js",
-    "./token": "./src/token/index.js",
-    "./utils": "./src/utils/index.js",
+    "./publish": "./src/publish/index.js",
     "./package.json": "./package.json"
   },
   "engines": {
@@ -91,11 +86,8 @@
     "lint:staged"
   ],
   "keywords": [
-    "firebase",
-    "firestore",
-    "minifier",
-    "minimizer",
-    "rules",
-    "security"
+    "code",
+    "examples",
+    "xampl"
   ]
 }
